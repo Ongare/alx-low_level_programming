@@ -1,19 +1,24 @@
 #include "main.h"
-/**
- * reverse_array - reverses an array
- *
- * @a: array to reverse
- * @n: size of array
- */
-void reverse_array(int *a, int n)
-{
-	int i;
-	int t;
 
-	for (i = 0; i < n / 2; i++)
+/**
+ * print_rev - a function that prints a string, in reverse
+ * fcounter is to first count to end, n is to count back
+ * @s: str input
+ * Return: string in reverse
+ */
+void print_rev(char *s)
+{
+	int fcounter = 0;
+	int i, n;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		t = a[i];
-		a[i] = a[n - i - 1];
-		a[n - i - 1] = t;
+		fcounter++;
 	}
+
+	for (n = (fcounter - 1); n >= 0; n--)
+	{
+		_putchar(s[n]);
+	}
+	_putchar('\n');
 }
