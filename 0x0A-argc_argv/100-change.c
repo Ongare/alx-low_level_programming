@@ -1,51 +1,51 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
- * main - main function
- * @argc: argumentc
- * @argv: vector of arguments
- *Return: always 0
- */
-int main(int argc, char  *argv[])
+ * main - Main Entry
+ * @argc: input
+ * @argv: input
+ * Return: Always 0 (success)
+**/
+int main(int argc, char *argv[])
 {
-	int coins = 0;
+int cents, coins = 0;
 
-	if (argc == 2)
-	{
-		if (strchr(argv[argc - 1], '-'))
-		{
-			printf("0\n");
-			return (1);
-		}
-		int money;
-
-		money = atoi(argv[argc - 1]);
-
-		while (money > 0)
-		{
-			if (money % 25 == 0)
-			{
-				money -= 25;
-			} else if (money % 10 == 0)
-			{
-				money -= 10;
-			} else if (money % 5 == 0)
-			{
-				money -= 5;
-			} else if (money % 2 == 0)
-			{
-				money -= 2;
-			} else
-			{
-				money--;
-			}
-			coins++;
-		}
-		printf("%d\n", coins);
-		return (0);
-	}
-	printf("Error\n");
-	return (1);
+if (argc == 2)
+{
+cents = atoi(*(argv + 1));
+while (cents > 0)
+{
+if (cents % 25 < cents)
+{
+cents -= 25;
+coins++;
+}
+else if (cents % 10 < cents)
+{
+cents -= 10;
+coins++;
+}
+else if (cents % 5 < cents)
+{
+cents -= 5;
+coins++;
+}
+else if (cents % 2 < cents)
+{
+cents -= 2;
+coins++;			}
+else if (cents % 1 < cents)
+{
+cents -= 1;
+coins++;
+}
+}
+}
+else
+{
+printf("Error\n");
+return (1);
+}
+printf("%d\n", coins);
+return (0);
 }
