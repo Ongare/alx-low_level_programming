@@ -7,27 +7,21 @@
  *
  * Return: unsigned int.
  */
-unsigned int binary_to_uint(const char *binary)
+unsigned int binary_to_uint(const char *b)
 {
-    unsigned int decimal = 0;  
-    int len = strlen(binary);  
+	int i;
+	unsigned int dec_val = 0;
 
-    for (int i = 0; i < len; i++) {
-        if (binary[i] == '1') {
+	if (!b)
+		return (0);
 
-            decimal = (decimal << 1) | 1;
-        }
+	for (i = 0; b[i]; i++)
+	{
+		if (b[i] < '0' || b[i] > '1')
+			return (0);
+		dec_val = 2 * dec_val + (b[i] - '0');
+	}
 
-        else if (binary[i] == '0') {
+	return (dec_val);
 
-            decimal = decimal << 1;
-        }
-        else {
-            printf("Error: Invalid binary character '%c'\n", binary[i]);
-            exit(1);
-        }
-    }
-
-    return decimal;
-}
-
+ }
